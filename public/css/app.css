@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@charset "UTF-8";
+@charset "UTF-8";
 
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
@@ -8348,5 +8348,390 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+
+body,
+html {
+  height: 100%;
+  background: #f9f9f9;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 10px;
+}
+
+a,
+a:hover,
+a:visited {
+  color: #555;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.avater {
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+}
+
+/* app布局 */
+
+.app .index {
+  padding-top: 70px;
+}
+
+/* header */
+
+.navbar-fixed-top .dropdown-menu li a .glyphicon {
+  margin-right: 8px;
+}
+
+.navbar-header .navbar-brand.logo-name {
+  color: #0084ff;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #0084ff;
+  background-color: #fff;
+}
+
+.navbar-default .navbar-nav > .active > a span,
+.navbar-default .navbar-nav > .active > a:hover span,
+.navbar-default .navbar-nav > .active > a:focus span {
+  border-bottom: 2px solid #0084ff;
+}
+
+.navbar-default .navbar-nav > li > a {
+  font-size: 15px;
+  color: #8590a6;
+  padding-bottom: 0px;
+}
+
+.navbar-default .navbar-nav > li > a span {
+  padding-bottom: 16px;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: #0084ff;
+}
+
+.navbar-default .search-input {
+  width: 240px;
+  -webkit-transition: width .5s;
+  transition: width .5s;
+}
+
+.navbar-default .search-input:focus {
+  width: 320px;
+}
+
+.navbar-default .btn-search {
+  background-color: #0084ff;
+  color: #fff;
+  padding: 6px 14px;
+  margin-left: 15px;
+}
+
+/* default布局 */
+
+.default .logo {
+  position: absolute;
+  top: 56px;
+  margin-left: 50px;
+}
+
+.default .logo img {
+  width: 100px;
+}
+
+.default .main .register,
+.default .main .login,
+.default .main .reset-password {
+  width: 400px;
+  margin: 100px auto 0;
+  padding: 0 15px;
+}
+
+.default .main .register .title,
+.default .main .login .title,
+.default .main .reset-password .title {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.default .main .register .register-form,
+.default .main .register .login-form,
+.default .main .register .reset-password-form,
+.default .main .login .register-form,
+.default .main .login .login-form,
+.default .main .login .reset-password-form,
+.default .main .reset-password .register-form,
+.default .main .reset-password .login-form,
+.default .main .reset-password .reset-password-form {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #d8dee2;
+  border-radius: 5px;
+}
+
+.default .main .register .register-form label,
+.default .main .register .login-form label,
+.default .main .register .reset-password-form label,
+.default .main .login .register-form label,
+.default .main .login .login-form label,
+.default .main .login .reset-password-form label,
+.default .main .reset-password .register-form label,
+.default .main .reset-password .login-form label,
+.default .main .reset-password .reset-password-form label {
+  margin-bottom: 7px;
+  display: block;
+}
+
+.default .main .register .register-form input,
+.default .main .register .login-form input,
+.default .main .register .reset-password-form input,
+.default .main .login .register-form input,
+.default .main .login .login-form input,
+.default .main .login .reset-password-form input,
+.default .main .reset-password .register-form input,
+.default .main .reset-password .login-form input,
+.default .main .reset-password .reset-password-form input {
+  margin: 5px 0 15px;
+}
+
+.default .main .register .register-form #input-validate-code,
+.default .main .register .login-form #input-validate-code,
+.default .main .register .reset-password-form #input-validate-code,
+.default .main .login .register-form #input-validate-code,
+.default .main .login .login-form #input-validate-code,
+.default .main .login .reset-password-form #input-validate-code,
+.default .main .reset-password .register-form #input-validate-code,
+.default .main .reset-password .login-form #input-validate-code,
+.default .main .reset-password .reset-password-form #input-validate-code {
+  width: calc(100% - 100px);
+  display: inline-block;
+  margin-top: 0px;
+}
+
+.default .main .register .register-form .btn-validate-code,
+.default .main .register .login-form .btn-validate-code,
+.default .main .register .reset-password-form .btn-validate-code,
+.default .main .login .register-form .btn-validate-code,
+.default .main .login .login-form .btn-validate-code,
+.default .main .login .reset-password-form .btn-validate-code,
+.default .main .reset-password .register-form .btn-validate-code,
+.default .main .reset-password .login-form .btn-validate-code,
+.default .main .reset-password .reset-password-form .btn-validate-code {
+  background: #409efe;
+  color: #fff;
+}
+
+.default .main .register .register-form .btn-register,
+.default .main .register .register-form .btn-login,
+.default .main .register .register-form .btn-reset-password,
+.default .main .register .login-form .btn-register,
+.default .main .register .login-form .btn-login,
+.default .main .register .login-form .btn-reset-password,
+.default .main .register .reset-password-form .btn-register,
+.default .main .register .reset-password-form .btn-login,
+.default .main .register .reset-password-form .btn-reset-password,
+.default .main .login .register-form .btn-register,
+.default .main .login .register-form .btn-login,
+.default .main .login .register-form .btn-reset-password,
+.default .main .login .login-form .btn-register,
+.default .main .login .login-form .btn-login,
+.default .main .login .login-form .btn-reset-password,
+.default .main .login .reset-password-form .btn-register,
+.default .main .login .reset-password-form .btn-login,
+.default .main .login .reset-password-form .btn-reset-password,
+.default .main .reset-password .register-form .btn-register,
+.default .main .reset-password .register-form .btn-login,
+.default .main .reset-password .register-form .btn-reset-password,
+.default .main .reset-password .login-form .btn-register,
+.default .main .reset-password .login-form .btn-login,
+.default .main .reset-password .login-form .btn-reset-password,
+.default .main .reset-password .reset-password-form .btn-register,
+.default .main .reset-password .reset-password-form .btn-login,
+.default .main .reset-password .reset-password-form .btn-reset-password {
+  background: #409efe;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.default .main .register .register-form .redirect-reset-password,
+.default .main .register .login-form .redirect-reset-password,
+.default .main .register .reset-password-form .redirect-reset-password,
+.default .main .login .register-form .redirect-reset-password,
+.default .main .login .login-form .redirect-reset-password,
+.default .main .login .reset-password-form .redirect-reset-password,
+.default .main .reset-password .register-form .redirect-reset-password,
+.default .main .reset-password .login-form .redirect-reset-password,
+.default .main .reset-password .reset-password-form .redirect-reset-password {
+  float: right;
+  cursor: pointer;
+  color: #409efe;
+}
+
+.default .main .register .redirect-login,
+.default .main .register .redirect-register,
+.default .main .login .redirect-login,
+.default .main .login .redirect-register,
+.default .main .reset-password .redirect-login,
+.default .main .reset-password .redirect-register {
+  padding: 15px 20px;
+  text-align: center;
+  border: 1px solid #d8dee2;
+  border-radius: 5px;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.default .main .register .redirect-login a,
+.default .main .register .redirect-register a,
+.default .main .login .redirect-login a,
+.default .main .login .redirect-register a,
+.default .main .reset-password .redirect-login a,
+.default .main .reset-password .redirect-register a {
+  color: #409efe;
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .default .logo {
+    display: none;
+  }
+}
+
+/* 个人中心*/
+
+.user .user-info {
+  margin-bottom: 20px;
+}
+
+.user .user-info .avater-default {
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+}
+
+.user .user-info .user-name {
+  padding: 5px 0 5px 10px;
+}
+
+.user .user-info .user-name .name {
+  font-size: 18px;
+}
+
+.user .user-info .user-name .edit-info {
+  color: #0084ff;
+  margin-left: 20px;
+  padding: 5px 15px;
+  border: 1px solid #0084ff;
+  border-radius: 3px;
+}
+
+.user .user-info .user-name .edit-info:hover {
+  background-color: #A0C5E8;
+  opacity: 0.7;
+}
+
+.user .user-info .info-count {
+  margin-bottom: 0px;
+}
+
+.user .user-info ul li {
+  display: inline-block;
+  border-right: 1px solid #f0f0f0;
+  padding-right: 7px;
+  padding-left: 7px;
+}
+
+.user .nav-pills > li.active > a,
+.user .nav-pills > li.active > a:hover,
+.user .nav-pills > li.active > a:focus {
+  color: #646464;
+  border-bottom: 2px solid #646464;
+  background-color: #f9f9f9;
+}
+
+.user .nav > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 0;
+}
+
+.user .user-part-nav {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.user .empty-block {
+  text-align: center;
+}
+
+/* edit-user*/
+
+.edit-user .input-left {
+  width: 140px;
+}
+
+.edit-user .avater-default {
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+}
+
+.edit-user .edit-user-group {
+  margin: 0;
+  padding: 15px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.edit-user input[type=text] {
+  padding: 5px 10px;
+  font-size: 15px;
+  border: 1px solid #c8c8c8;
+  border-radius: 4px;
+  background-color: rgba(181, 181, 181, 0.1);
+}
+
+.edit-user .input-hide-file {
+  position: absolute;
+  display: inline-block !important;
+  width: 82px;
+  opacity: 0;
+  top: 0px;
+}
+
+.edit-user .btn-avater {
+  position: relative;
+  margin-left: 60px;
+  padding: 4px 12px;
+  border: 1px solid #0084ff;
+  color: #0084ff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.edit-user .upload-tips {
+  border: 0 !important;
+  color: #888;
+}
+
+.edit-user .btn-avater:hover {
+  background-color: #A0C5E8;
+  opacity: 0.7;
+}
+
+.edit-user .btn-update-user {
+  margin-top: 15px;
+  background-color: #0084ff;
 }
 

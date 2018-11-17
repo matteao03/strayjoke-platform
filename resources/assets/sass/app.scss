@@ -1,9 +1,272 @@
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+//@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
 // Variables
 @import "variables";
 
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+body , html{
+	height: 100%;
+	background: #f9f9f9;
+}
+ul{
+	list-style-type: disc;
+	padding-left:10px;
+}
+
+a, a:hover,a:visited {
+	color: #555;
+	text-decoration: none;
+	cursor: pointer;
+}
+.avater{
+	width:60px;
+	height:60px;
+	border-radius:4px;
+}
+/* app布局 */
+.app .index{
+	padding-top: 70px;
+}
+/* header */
+.navbar-fixed-top .dropdown-menu li a .glyphicon {
+    margin-right: 8px;
+}
+.navbar-header .navbar-brand.logo-name{
+	color:#0084ff;
+	font-weight: bold;
+	font-size:28px;
+}
+.navbar-default {
+	.navbar-nav > .active > a,
+	.navbar-nav > .active > a:hover,
+	.navbar-nav > .active > a:focus {
+		color: #0084ff;
+		background-color:#fff;
+		span{
+			border-bottom:2px solid #0084ff;
+		}
+	}
+	.navbar-nav > li > a {
+		font-size: 15px;
+		color: #8590a6;
+		padding-bottom:0px;
+		span{
+			padding-bottom:16px;
+		}
+	}
+	.navbar-nav > li > a:hover{
+		color: #0084ff;
+	}
+	.search-input {
+		width: 240px;
+		transition: width .5s;
+	}
+	.search-input:focus {
+		width: 320px;
+	}
+	.btn-search {
+		background-color:#0084ff;
+		color:#fff;
+		padding:6px 14px;
+		margin-left:15px;
+	}
+}
+	/* default布局 */
+	.default{
+		.logo {
+			position: absolute;
+			top: 56px;
+			margin-left: 50px;
+
+			img{
+				width:100px;
+			}
+		}
+		.main{
+			.register, .login, .reset-password{
+				width:400px;
+				margin:100px auto 0;
+				padding:0 15px;
+
+				.title{
+					text-align: center;
+					font-size:22px;
+					margin-bottom: 15px;
+				}
+				.register-form, .login-form, .reset-password-form{
+					background: #fff;
+					padding:20px;
+					border: 1px solid #d8dee2;
+					border-radius: 5px;
+
+					label{
+						margin-bottom: 7px;
+						display: block;
+					}
+					input{
+						margin: 5px 0 15px;
+					}
+					#input-validate-code{
+						width:calc(100% - 100px);
+						display: inline-block;
+						margin-top: 0px;
+					}
+					.btn-validate-code{
+						background: #409efe;
+						color:#fff;
+					}
+					.btn-register, .btn-login, .btn-reset-password{
+						background: #409efe;
+						color: #fff;
+						margin-top: 20px;
+					}
+					.redirect-reset-password{
+						float:right;
+						cursor: pointer;
+						color: #409efe;
+					}
+				}
+
+				.redirect-login, .redirect-register{
+					padding: 15px 20px;
+					text-align: center;
+					border: 1px solid #d8dee2;
+					border-radius: 5px;
+					margin-top: 15px ;
+					font-size:16px;
+
+					a{
+						color: #409efe;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+		@media (max-width: 992px){
+			.logo{
+				display:none;
+			}
+		}
+		@media (max-width: 768px){
+
+		}
+	}
+
+/* 个人中心*/
+.user{
+	.user-info{
+		margin-bottom:20px;
+
+		.avater-default{
+			width:80px;
+			height:80px;
+			border-radius:4px;
+		}
+		.user-name{
+			padding:5px 0 5px 10px;
+
+			.name{
+				font-size:18px;
+			}
+			.edit-info{
+				color: #0084ff;
+				margin-left:20px;
+				padding:5px 15px;
+				border:1px solid #0084ff;
+				border-radius:3px;
+			}
+			.edit-info:hover{
+				background-color: #A0C5E8;
+				opacity: 0.7;
+			}
+		}
+		.info-count{
+			margin-bottom:0px;
+		}
+		ul li{
+			display:inline-block;
+			border-right:1px solid #f0f0f0;
+			padding-right:7px;
+			padding-left:7px;
+		}
+	}
+
+	.nav-pills > li.active > a,
+	.nav-pills > li.active > a:hover,
+	.nav-pills > li.active > a:focus {
+		color: #646464;
+		border-bottom: 2px solid #646464;
+		background-color: #f9f9f9;
+	}
+
+	.nav > li > a {
+		position: relative;
+		display: block;
+		padding: 10px 15px;
+		border-radius:0;
+	}
+	.user-part-nav{
+		margin-bottom:20px;
+		border-bottom: 1px solid #eeeeee;
+	}
+	.empty-block{
+		text-align:center;
+	}
+}
+
+/* edit-user*/
+.edit-user{
+	.input-left{
+		width:140px;
+	}
+	.avater-default{
+		width:80px;
+		height:80px;
+		border-radius:4px;
+	}
+	.edit-user-group{
+		margin: 0;
+		padding:15px 0;
+		border-bottom:1px solid #f0f0f0;
+	}
+	input[type=text]{
+		padding: 5px 10px;
+    	font-size: 15px;
+    	border: 1px solid #c8c8c8;
+    	border-radius: 4px;
+    	background-color: hsla(0,0%,71%,.1);
+	}
+	.input-hide-file{
+		position: absolute;
+    	display: inline-block!important;
+    	width: 82px;
+    	opacity: 0;
+    	top:0px;
+	}
+	.btn-avater{
+		position: relative;
+		margin-left:60px;
+		padding:4px 12px;
+		border: 1px solid #0084ff;
+    	color: #0084ff;
+    	border-radius:3px;
+    	cursor: pointer;
+	}
+	.upload-tips{
+		border:0 !important;
+		color:#888;
+	}
+	.btn-avater:hover{
+		background-color: #A0C5E8;
+		opacity: 0.7;
+	}
+	.btn-update-user{
+		margin-top:15px;
+		background-color:#0084ff;
+	}
+
+}

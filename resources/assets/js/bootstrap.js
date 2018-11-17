@@ -53,3 +53,6 @@ if (token) {
 //     cluster: 'mt1',
 //     encrypted: true
 // });
+
+//弹出框
+require('sweetalert');
