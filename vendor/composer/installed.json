@@ -255,7 +255,7 @@
                 "dev-master": "0.2-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Dingo\\Blueprint\\": "src"
@@ -2714,7 +2714,7 @@
         },
         "time": "2017-10-19T08:02:14+00:00",
         "type": "library",
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Mrgoon\\AliSms\\": "src/"

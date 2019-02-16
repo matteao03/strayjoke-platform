@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),
+    'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/type-resolver/src', $vendorDir . '/phpdocumentor/reflection-docblock/src'),
     'iscms\\Alisms\\' => array($vendorDir . '/iscms/alisms-for-laravel/src'),
     'iscms\\AlismsSdk\\' => array($vendorDir . '/iscms/alisms-for-laravel/src/vendor'),
     'Yansongda\\Supports\\' => array($vendorDir . '/yansongda/supports/src'),
