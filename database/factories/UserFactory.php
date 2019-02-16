@@ -24,5 +24,8 @@ $factory->define(App\Models\User::class, function () {
         'remember_token' => str_random(10),
         'created_at' => $now,
         'updated_at' => $now,
+        'active' => 1,
+        'nickname' => 'test',
+        'wx_openid' => 'sdfaghjk12345',
     ];
 });

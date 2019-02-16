@@ -6,13 +6,25 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
-	protected $fillable = [
-        'title', 'content', 'lawyer_id',
+    const STATUS_DRAFT = 'draft';
+    const STATUS_PROCESSING = 'processing';
+    const STATUS_PASS = 'pass';
+    const STATUS_FAILED = 'failed';
+
+    protected static $statusMap =[
+        self::STATUS_DRAFT => '待审核',
+        self::STATUS_PROCESSING => '审核中',
+        self::STATUS_PASS => '已发布',
+        self::STATUS_FAILED => '不通过',
+    ];
+    
+    protected $fillable = [
+        'title', 'content', 'user_id', 'reply_count', 'view_count', 'excerpt', 'status'
     ];
 
-    public function lawyer()
+    public function user()
     {
-    	return $this->belongsTo(Lawyer::class);
+    	return $this->belongsTo(User::class);
     }
 
     public function comments()
@@ -25,20 +37,21 @@ class Article extends Model
         // 不同的排序，使用不同的数据读取逻辑
         switch ($order) {
             case 'recent':
-                return $query->recent();
+                $query->recent();
                 break;
 
             default:
-                return $query->recentReplied();
+                $query->hotReplied();
                 break;
         }
+        // 预加载防止 N+1 问题
+        return $query->with('user');
     }
 
-    public function scopeRecentReplied($query)
+    public function scopeHotReplied($query)
     {
         // 当话题有新回复时，我们将编写逻辑来更新话题模型的 reply_count 属性，
-        // 此时会自动触发框架对数据模型 updated_at 时间戳的更新
-        return $query->orderBy('updated_at', 'desc');
+        return $query->orderBy('reply_count', 'desc');
     }
 
     public function scopeRecent($query)

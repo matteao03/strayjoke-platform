@@ -6,16 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lawyer extends Model
 {
-    public function articles()
-    {
-    	return $this->hasMany(Articles::class);
-    }
+    const STATUS_PROCESSING = 'processing';
+    const STATUS_PASS = 'pass';
+    const STATUS_FAILED = 'failed';
 
+    protected static $statusMap =[
+        self::STATUS_PROCESSING => '审核中',
+        self::STATUS_PASS => '已认证',
+        self::STATUS_FAILED => '不通过',
+    ];
+    
     protected $fillable = [
-        'name', 'mobile', 'password',
+        'org', 'description', 'tel', 'avatar', 'user_id', 'name'
     ];
-
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

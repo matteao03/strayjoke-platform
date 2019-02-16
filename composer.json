@@ -6,13 +6,25 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
+        "dingo/api": "^2.0.0-alpha2",
+        "encore/laravel-admin": "1.6.8",
         "fideloper/proxy": "~3.3",
         "hieu-le/active": "~3.5",
         "iscms/alisms-for-laravel": "^0.0.3",
         "laravel/framework": "5.5.*",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "mews/purifier": "^2.1",
+        "mrgoon/aliyun-sms": "dev-master",
+        "overtrue/laravel-lang": "~3.0",
+        "predis/predis": "^1.1",
+        "socialiteproviders/weixin": "^4.0",
+        "tymon/jwt-auth": "1.0.0-rc.3",
+        "webpatser/laravel-uuid": "^3.0",
+        "yansongda/pay": "^2.6"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "3.2",
+        "doctrine/dbal": "^2.9",
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "~1.0",
@@ -26,7 +38,10 @@
         ],
         "psr-4": {
             "App\\": "app/"
-        }
+        },
+        "files": [
+            "app/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
@@ -55,5 +70,7 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "optimize-autoloader": true
-    }
+    },
+    "minimum-stability" : "dev",
+    "prefer-stable" : true
 }

@@ -13,14 +13,9 @@ class ArticlesTableSeeder extends Seeder
      */
     public function run()
     {
-    	$lawyer_ids = Lawyer::all()->pluck('id')->toArray();
     	$faker = app(Faker\Generator::class);
 
-        $Articles = factory(Article::class)->times(10)->make()->each(function($article, $index)
-        	use ($lawyer_ids, $faker)
-        	{
-        		$article ->lawyer_id = $faker->randomElement($lawyer_ids);
-        	});
+        $Articles = factory(Article::class)->times(10)->make();
     	
     	Article::insert($Articles->toArray());
     }

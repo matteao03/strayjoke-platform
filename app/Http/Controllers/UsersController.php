@@ -5,22 +5,79 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
+use Uuid;
 
 class UsersController extends Controller
 {
-	public function save(Request $request, User $user){
-		$user->update(['name'=>$request->name, 'password'=>bcrypt($request->password)]);
-		return redirect()->route('home');  
-	}  
+    public function __construct()
+    {
+      // $this->middleware('auth', ['except' => ['show', 'store', ]]);
+    }
+    
+    //创建用户
+    public function store(Request $request){
+        $this->validate($request, [
+            'nickname' => 'required',
+            'password' => 'required|comfirmed'
+        ]);
 
-	public function home(){
-		return view('home');
-	}
+        $mobile = $request->session()->get('register_mobile');
+        
+        $user = User::create([
+            'name' => Uuid::generate(),
+            'nickname' => $request -> nickname,
+            'password' => bcrypt($request->password),
+            'mobile' => $mobile,
+        ]);
+        
+        //登录成功
+        Auth::login($user);
+        
+        return [
+            'code' => 1,
+            'message' => '注册成功！'
+        ];
+    }  
 
-	public function info()
+    //我的主页
+    public function show(User $user)
+    {
+        return  view('users.show', compact('user'));
+    }
+    
+    //设置
+    public function edit(User $user)
+    {
+        //$this->authorize('update', $user);
+        return view('users.edit', compact('user'));
+    }
+    
+    //更新
+    public function update(Request $request, User $user)
+    {
+       // $this->authorize('update', $user);
+        $user->name = $request->name;
+        $user->save();
+        return  redirect()->route('users.edit', $user);
+    }
+    
+    public function unbindMobile(Request $request)
     {
         $user = Auth::user();
-        return  redirect()->route('user.topics',['mobile' => $user->mobile]);
+        if ($request->mobile === $user->mobile)
+        {
+            $user->mobile = '';
+            $user->save();
+            return  [
+                'code'=>1, 
+                'msg'=> '手机号解绑成功'
+            ];
+        } else {
+            return  [
+                'code'=> 0, 
+                'msg'=> '手机号解绑失败'
+            ];
+        }  
     }
 
     public function showTopics()
@@ -37,17 +94,4 @@ class UsersController extends Controller
         return view('users.comments', compact('comments', 'user'));
     }
 
-    public function edit()
-    {
-        $user = Auth::user();
-        return view('users.edit', compact('user'));
-    }
-
-    public function update(Request $request)
-    {
-        $user = Auth::user();
-        $user->name = $request->name;
-        $user->save();
-        return  redirect()->route('user.edit', $user->mobile);
-    }
 }

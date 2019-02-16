@@ -20,7 +20,7 @@
     <div id="app" class="default">
         <div class="logo">
             <a href="/">
-                <img src="/logo.png" alt="logo">
+                <span class="logo-name">风了</span>
             </a>
         </div>
         <div class="main">

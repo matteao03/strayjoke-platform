@@ -17,7 +17,7 @@ class CreateArticlesTable extends Migration
             $table->increments('id');
             $table->string('title')->index();
             $table->text('content');
-            $table->integer('lawyer_id')->index();
+            $table->integer('user_id')->index();
             $table->index(['created_at']);
             $table->timestamps();
         });

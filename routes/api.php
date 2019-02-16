@@ -12,10 +12,18 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::post('/validateCode', 'Api\VerificationCodesController@store')->name('validateCode');
-Route::post('/replyComment', 'Api\RepliesController@store')->name('replyComment');
+$api = app('Dingo\Api\Routing\Router');
+
+$api->version('v1', [
+    'namespace' => 'App\Http\Controllers\Api'
+], function($api) {
+    //第三方登录
+    Route::post('socials/{social_type}/authorizations', 'AuthorizationsController@socialStore')
+        ->name('api.socials.authorizations.store');
+
+    // 登录
+    $api->post('authorizations', 'AuthorizationsController@store')
+        ->name('api.authorizations.store');
+});
 
 Route::post('/fileUpload', 'Api\FileUploadController@store')->name('fileUpload');
-
-
-

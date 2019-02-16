@@ -10,5 +10,6 @@ $factory->define(App\Models\Topic::class, function () {
         'content' => $faker->text,
         'created_at' => $now,
         'updated_at' => $now,
+        'user_id' => 11
     ];
 });

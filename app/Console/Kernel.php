@@ -26,6 +26,8 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+        // 每天零点执行一次文章点赞数据同步数据库的命令
+        $schedule->command('strayjoke:article-like-data-to-sql')->everyFiveMinutes();
     }
 
     /**

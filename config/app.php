@@ -160,9 +160,11 @@ return [
         Illuminate\Redis\RedisServiceProvider::class,
         Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
         Illuminate\Session\SessionServiceProvider::class,
-        Illuminate\Translation\TranslationServiceProvider::class,
+        //Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        //上面替换
+        Overtrue\LaravelLang\TranslationServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -177,8 +179,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        //阿里大鱼短信
-        iscms\Alisms\AlidayuServiceProvider::class
+        //阿里云短信
+        Mrgoon\AliSms\ServiceProvider::class
 
     ],
 
@@ -228,7 +230,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Uuid' => Webpatser\Uuid\Uuid::class,
     ],
 
 ];
