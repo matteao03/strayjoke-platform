@@ -79,7 +79,11 @@
                     if (valid) {
                         this.loading = true
                         let me = this
-                        axios.post('/auth_info',this.authInfoForm)
+                        axios.post('/auth_info',{
+                            password: this.authInfoForm.password,
+                            password_confirmation: this.authInfoForm.checkPassword,
+                            nickname: this.authInfoForm.nickname
+                        })
                         .then(function (response) {
                             if (response.data.code === 1)
                             {

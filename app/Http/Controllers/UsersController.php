@@ -18,7 +18,7 @@ class UsersController extends Controller
     public function store(Request $request){
         $this->validate($request, [
             'nickname' => 'required',
-            'password' => 'required|comfirmed'
+            'password' => 'required|confirmed'
         ]);
 
         $mobile = $request->session()->get('register_mobile');
